@@ -33,8 +33,6 @@ Meaning2
 
 Use appropriate data structures wherever necessary.
 
----
-
 ### Question 2
 
 Write an automated test for this scenario using WebDriver.
@@ -58,8 +56,6 @@ Output should be:
 Person A  3
 Person B  1
 ```
-
----
 
 ### Question 3
 
