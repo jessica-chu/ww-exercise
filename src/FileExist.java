@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class App {
+public class FileExist {
 
     public static void doesFileExist(String path) throws Exception {
 
