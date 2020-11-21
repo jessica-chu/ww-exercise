@@ -1,3 +1,6 @@
+// This program checks if a file (dictionary) exists and outputs the word and
+// its definition(s).
+
 import java.io.*;
 
 public class FileExist {
