@@ -19,7 +19,7 @@ Orange – a fruit
 
 Given a path to the file, do the following:
 
-a) Create a method called doesFileExist(String path) which takes the path of the file and tells the user if the file exists at that path or not. Assume all paths are relative to your project structure. If the file does not exist, catch the requisite exception.
+a) Create a method called `doesFileExist(String path)` which takes the path of the file and tells the user if the file exists at that path or not. Assume all paths are relative to your project structure. If the file does not exist, catch the requisite exception.
 b) Read each word and its possible meanings and print them out. Your output should look like this:
 
 ```
@@ -51,7 +51,7 @@ Steps:
 8. From this location page, print TODAY’s hours of operation (located towards the bottom of the page)
 9. Create a method to print the number of meeting the each person (under the scheduled time) has a particular day of the week
 
-e.g. printMeetings("Sun")
+e.g. `printMeetings("Sun")`
 
 Output should be:
 ```
