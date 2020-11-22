@@ -30,7 +30,7 @@ public class AboutUsTest {
            
         Thread.sleep(1500);
 
-        // Is the head <title> expectedTitle?
+        // Asserts that title page is the expected title
         String actualTitle = driver.getTitle();
         String expectedTitle = "WW (Weight Watchers): Weight Loss Program & Wellness Help | WW USA";
         // String expectedTitle = "WW (Weight Watchers): Weight Loss & Wellness Help | WW USA";

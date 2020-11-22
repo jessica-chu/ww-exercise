@@ -28,8 +28,9 @@ public class FindWorkshopTest {
     @Test (priority = 0)
     public void isTitle() throws InterruptedException {
 
-        Thread.sleep(2000);
+        Thread.sleep(1500);
 
+        // Asserts that title page is the expected title
         String actualTitle = driver.getTitle();
         char nbsp = '\u00A0';   // ASCII &nbsp
         String expectedTitle = "Find WW" + nbsp + "Studios & Meetings Near You | WW USA";
@@ -39,13 +40,31 @@ public class FindWorkshopTest {
     @Test (priority = 1)
     public void searchMeetings() throws InterruptedException {
         
+        // Search for meetings at zip code: 10011
         driver.findElement(By.id("location-search")).sendKeys("10011");
         driver.findElement(By.id("location-search-cta")).click();
 
         Thread.sleep(1500);
 
+        // Output the first search result's title and distance
         String searchResult = driver.findElement(By.cssSelector("div#search-results div:nth-of-type(1) div[class*=heading-]")).getText();
-        System.out.println("Search results outputting title and distance:\n" + searchResult);
+        System.out.println("\nSearch results outputting title and distance:\n" + searchResult + "\n");
+    }
+
+    @Test (priority = 2)
+    public void clickSearchResult() throws InterruptedException {
+
+        // Gets the location name of the first search result
+        String actualTitle = driver.findElement(By.cssSelector("div#search-results div:nth-of-type(1) > div:nth-child(1)")).getText();
+        
+        // Click on first search result
+        driver.findElement(By.cssSelector("div#search-results div:nth-of-type(1) a")).click();
+
+        Thread.sleep(1000);
+
+        // Asserts that the search result location name is the same as its search result
+        String expectedTitle = driver.findElement(By.cssSelector("h1")).getText();
+        assertEquals(expectedTitle, actualTitle);
     }
 }
 
