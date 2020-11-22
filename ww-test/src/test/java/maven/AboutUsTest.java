@@ -12,44 +12,36 @@ import org.testng.annotations.Test;
 
 // import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class WWTest {
+public class AboutUsTest {
     // WebDriverManager.chromedriver().setup();
     WebDriver driver = new ChromeDriver();
     
     @BeforeClass
     public void init(){
-        driver.manage().window().maximize();
+        // driver.manage().window().maximize();
         driver.navigate().to("https://www.weightwatchers.com/us/");
+
+        Logger logger = LoggerFactory.getLogger(AboutUsTest.class);
+        logger.info("Starting...");
     }
      
     @Test (priority = 0)
     public void isTitle() throws InterruptedException {
-        
-        Logger logger = LoggerFactory.getLogger(WWTest.class);
-        logger.info("Starting...");
-        
-        Thread.sleep(2500);
+           
+        Thread.sleep(1500);
 
-        // Test: Is the head <title> expectedTitle?
+        // Is the head <title> expectedTitle?
         String actualTitle = driver.getTitle();
         String expectedTitle = "WW (Weight Watchers): Weight Loss Program & Wellness Help | WW USA";
         // String expectedTitle = "WW (Weight Watchers): Weight Loss & Wellness Help | WW USA";
         assertEquals(expectedTitle, actualTitle);
-
-        Thread.sleep(2000);
     }
 
     @Test (priority = 1)
-    public void findWorkshopClick() throws InterruptedException {
-        
-        // Button click "Find a Workshop"
-        driver.findElement(By.linkText("Find a Workshop")).click();
+    public void findWorkshopButton() {
 
-        Thread.sleep(2000);
-
-        String actualTitle = driver.getTitle();
-        char nbsp = '\u00A0';
-        String expectedTitle = "Find WW" + nbsp + "Studios & Meetings Near You | WW USA";
-        assertEquals(expectedTitle, actualTitle);
+        // Click on button 'Find a Workshop'
+        driver.findElement(By.cssSelector("a[da-label='Find a Workshop']")).click();
     }
+
 }
