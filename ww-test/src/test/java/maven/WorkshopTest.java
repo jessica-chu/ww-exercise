@@ -21,12 +21,12 @@ import org.testng.annotations.*;
 
 public class WorkshopTest {
     // WebDriverManager.chromedriver().setup();
-    WebDriver driver = new ChromeDriver();
+    static WebDriver driver = new ChromeDriver();
     LocalDate date = LocalDate.now();
     DayOfWeek day = date.getDayOfWeek();
 
     @BeforeClass
-    public void init() {
+    public static void init() {
         // driver.manage().window().maximize();
         driver.navigate()
                 .to("https://www.weightwatchers.com/us/find-a-workshop/1180510/ww-studio-flatiron-new-york-ny");
@@ -85,6 +85,13 @@ public class WorkshopTest {
 
         for (Map.Entry<String, Integer> val : hm.entrySet())
             System.out.println(val.getKey() + "  " + val.getValue());
+    }
+
+    @AfterClass
+    public static void tearDown() {
+
+        // Close browser window
+        driver.quit();
     }
 
 }

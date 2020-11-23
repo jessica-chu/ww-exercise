@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -14,15 +15,15 @@ import org.testng.annotations.Test;
 
 public class FindWorkshopTest {
     // WebDriverManager.chromedriver().setup();
-    WebDriver driver = new ChromeDriver();
-    
+    static WebDriver driver = new ChromeDriver();
+
     @BeforeClass
-    public void init(){
+    public static void init() {
         // driver.manage().window().maximize();
         driver.navigate().to("https://www.weightwatchers.com/us/find-a-workshop/");
 
         Logger logger = LoggerFactory.getLogger(FindWorkshopTest.class);
-        logger.info("Starting...");
+        logger.info("Starting...\n");
     }
 
     @Test (priority = 0)
@@ -48,7 +49,7 @@ public class FindWorkshopTest {
 
         // Output the first search result's title and distance
         String searchResult = driver.findElement(By.cssSelector("div#search-results div:nth-of-type(1) div[class*=heading-]")).getText();
-        System.out.println("\nSearch results outputting title and distance:\n" + searchResult + "\n");
+        System.out.println("Search results outputting title and distance:\n" + searchResult + "\n");
     }
 
     @Test (priority = 2)
@@ -65,6 +66,13 @@ public class FindWorkshopTest {
         // Asserts that the search result location name is the same as its search result
         String expectedTitle = driver.findElement(By.cssSelector("h1")).getText();
         assertEquals(expectedTitle, actualTitle);
+    }
+
+    @AfterClass
+    public static void tearDown() {
+
+        // Close browser window
+        driver.quit();
     }
 }
 

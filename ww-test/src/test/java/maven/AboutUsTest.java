@@ -8,21 +8,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 // import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AboutUsTest {
     // WebDriverManager.chromedriver().setup();
-    WebDriver driver = new ChromeDriver();
-    
+    static WebDriver driver = new ChromeDriver();
+
     @BeforeClass
-    public void init(){
+    public static void init() {
         // driver.manage().window().maximize();
         driver.navigate().to("https://www.weightwatchers.com/us/");
 
         Logger logger = LoggerFactory.getLogger(AboutUsTest.class);
-        logger.info("Starting...");
+        logger.info("Starting...\n");
     }
      
     @Test (priority = 0)
@@ -42,6 +43,13 @@ public class AboutUsTest {
 
         // Click on button 'Find a Workshop'
         driver.findElement(By.cssSelector("a[da-label='Find a Workshop']")).click();
+    }
+
+    @AfterClass
+    public static void tearDown() {
+
+        // Close browser window
+        driver.quit();
     }
 
 }
