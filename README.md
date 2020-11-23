@@ -12,7 +12,7 @@ mvn -Dtest=AboutUsTest test
 mvn -Dtest=FindWorkshopTest test
 ```
 
-* `@Parameter` is not passed as an argument is `mvn -Dtest=WorkshopTest test` is used (it will take `@Optional` instead). Instead, use:
+* `@Parameter` is not passed as an argument when `mvn -Dtest=WorkshopTest test` is used (it will take `@Optional` instead). Instead, use:
 
 ```bash
 mvn test
