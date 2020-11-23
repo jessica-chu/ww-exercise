@@ -19,7 +19,7 @@ public class FindWorkshopTest {
 
     @BeforeClass
     public static void init() {
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.navigate().to("https://www.weightwatchers.com/us/find-a-workshop/");
 
         Logger logger = LoggerFactory.getLogger(FindWorkshopTest.class);
@@ -43,13 +43,19 @@ public class FindWorkshopTest {
         
         // Search for meetings at zip code: 10011
         driver.findElement(By.id("location-search")).sendKeys("10011");
+
+        Thread.sleep(1500);
+
+        // Click the search button
         driver.findElement(By.id("location-search-cta")).click();
 
         Thread.sleep(1500);
 
         // Output the first search result's title and distance
         String searchResult = driver.findElement(By.cssSelector("div#search-results div:nth-of-type(1) div[class*=heading-]")).getText();
-        System.out.println("Search results outputting title and distance:\n" + searchResult + "\n");
+        System.out.println("Search results outputting title and distance...\n" + searchResult + "\n");
+
+        Thread.sleep(1500);
     }
 
     @Test (priority = 2)
@@ -66,6 +72,8 @@ public class FindWorkshopTest {
         // Asserts that the search result location name is the same as its search result
         String expectedTitle = driver.findElement(By.cssSelector("h1")).getText();
         assertEquals(expectedTitle, actualTitle);
+
+        Thread.sleep(2000);
     }
 
     @AfterClass
@@ -74,5 +82,6 @@ public class FindWorkshopTest {
         // Close browser window
         driver.quit();
     }
+    
 }
 

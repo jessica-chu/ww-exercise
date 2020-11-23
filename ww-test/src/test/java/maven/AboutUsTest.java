@@ -19,7 +19,7 @@ public class AboutUsTest {
 
     @BeforeClass
     public static void init() {
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.navigate().to("https://www.weightwatchers.com/us/");
 
         Logger logger = LoggerFactory.getLogger(AboutUsTest.class);
@@ -39,10 +39,12 @@ public class AboutUsTest {
     }
 
     @Test (priority = 1)
-    public void findWorkshopButton() {
+    public void findWorkshopButton() throws InterruptedException {
 
         // Click on button 'Find a Workshop'
         driver.findElement(By.cssSelector("a[da-label='Find a Workshop']")).click();
+
+        Thread.sleep(2000);
     }
 
     @AfterClass

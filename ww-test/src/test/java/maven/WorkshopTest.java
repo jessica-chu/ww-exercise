@@ -27,7 +27,7 @@ public class WorkshopTest {
 
     @BeforeClass
     public static void init() {
-        // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.navigate()
                 .to("https://www.weightwatchers.com/us/find-a-workshop/1180510/ww-studio-flatiron-new-york-ny");
 
@@ -46,6 +46,7 @@ public class WorkshopTest {
         WebElement element = driver.findElement(By.tagName("div"));
         List<WebElement> days = element.findElements(By.className("dayName-CTNC6"));
 
+        // Prints out hours of operation for today
         for (WebElement e : days) {
             // System.out.println(e.getAttribute("innerText"));
 
@@ -63,14 +64,14 @@ public class WorkshopTest {
 
         // String today = day.getDisplayName(TextStyle.SHORT_STANDALONE, Locale.ENGLISH);
         s = s.toUpperCase();
-        System.out.println("DAY: " + s + "\n");
+        System.out.println("Printing meetings for " + s + " (abbr.)\n");
 
         String myPath = "(//span[contains(text(), '" + s + "')])//following-sibling::*//span[2]";
-
         List<WebElement> persons = driver.findElements(By.xpath(myPath));
 
         ArrayList<String> list = new ArrayList<String>();
 
+        // Put list of names in an array
         for (WebElement el : persons)
             list.add(el.getText());
 
@@ -83,8 +84,12 @@ public class WorkshopTest {
             hm.put(i, (j == null) ? 1 : j + 1);
         }
 
+        // Print out number of meetings for each person for the day
         for (Map.Entry<String, Integer> val : hm.entrySet())
             System.out.println(val.getKey() + "  " + val.getValue());
+
+        System.out.print("\n");
+        Thread.sleep(2000);
     }
 
     @AfterClass
