@@ -13,7 +13,11 @@ java -jar FileExist.java
 ```
 
 ### Question 2
-Located in the directory `ww-test`. I used ChromeDriver for this exercise. `AboutUsTest` and `FindWorkshopTest` can be run using:
+Located in the directory `ww-test` is a Maven project for this exercise question (using ChromeDriver). `AboutUsTest` and `FindWorkshopTest` can be run using:
+* Steps:
+  * 1-3 in `AboutUsTest.java`
+  * 4-7 in `FindWorkshopTest.java`
+  * 8-9 in `WorkshopTest.java`
 
 ```bash
 cd ww-test
