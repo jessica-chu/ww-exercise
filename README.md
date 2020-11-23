@@ -1,6 +1,7 @@
 # WW Coding Exercise
 
 ## Usage
+Note: I used Visual Studio Code to complete the coding exercise.
 * Files in the directory `src` include coding exercise questions 1 and 3.
 * Question 2 is located in the directory `ww-test`. I used ChromeDriver for this exercise. To run each test file separately. For example:
 
