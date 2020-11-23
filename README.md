@@ -3,10 +3,19 @@
 ## Usage
 Note: I used Visual Studio Code to complete the coding exercise.
 * Files in the directory `src` include coding exercise questions 1 and 3.
-* Question 2 is located in the directory `ww-test`. I used ChromeDriver for this exercise. To run each test file separately. For example:
+* Question 2 is located in the directory `ww-test`. I used ChromeDriver for this exercise. `AboutUsTest` and `FindWorkshopTest` can be run using:
 
 ```bash
+cd ww-test
 mvn -Dtest=AboutUsTest test
+
+mvn -Dtest=FindWorkshopTest test
+```
+
+* `@Parameter` is not passed as an argument is `mvn -Dtest=WorkshopTest test` is used (it will take `@Optional` instead). Instead, use:
+
+```bash
+mvn test
 ```
 
 ## Folder Structure
