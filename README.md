@@ -5,6 +5,8 @@ Note: I used Visual Studio Code to complete the coding exercise. All programs ca
 * Files in the directory `src` include coding exercise questions 1 and 3.
 
 ### Question 1
+*Required: Installation or update of OpenJDK (version 14+)*
+
 ```bash
 cd src
 java -jar FileExist.java
@@ -26,7 +28,7 @@ mvn test
 ```
 
 ### Question 3
-*Required*: Installation of [Node.js](https://nodejs.org/en/)
+*Required: Installation of [Node.js](https://nodejs.org/en/)*
 
 This Javascript program can be run as such:
 
