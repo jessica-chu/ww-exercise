@@ -1,5 +1,13 @@
 # WW Coding Exercise
 
+## Usage
+* Files in the directory `src` include coding exercise questions 1 and 3.
+* Question 2 is the directory `ww-test`. To run each test file separately. For example:
+
+```bash
+mvn -Dtest=AboutUsTest test
+```
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:
@@ -49,9 +57,9 @@ Steps:
 6. Print the title of the first result and the distance (located on the right of location title/name)
 7. Click on the first search result and then, verify displayed location name/title matches with the name of the first searched result that was clicked.
 8. From this location page, print TODAY’s hours of operation (located towards the bottom of the page)
-9. Create a method to print the number of meeting the each person (under the scheduled time) has a particular day of the week
+9. Create a method to print the number of meetings each person (under the scheduled time) has a particular day of the week
 
-e.g. `printMeetings("Sun")`
+e.g. `printMeetings("Mon")`
 
 Output should be:
 ```
