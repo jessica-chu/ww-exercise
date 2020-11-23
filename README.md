@@ -2,7 +2,7 @@
 
 ## Usage
 * Files in the directory `src` include coding exercise questions 1 and 3.
-* Question 2 is the directory `ww-test`. To run each test file separately. For example:
+* Question 2 is located in the directory `ww-test`. I used ChromeDriver for this exercise. To run each test file separately. For example:
 
 ```bash
 mvn -Dtest=AboutUsTest test
