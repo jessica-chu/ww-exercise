@@ -1,14 +1,21 @@
 # WW Coding Exercise
 
 ## Usage
-Note: I used Visual Studio Code to complete the coding exercise.
+Note: I used Visual Studio Code to complete the coding exercise. All programs can be run in the terminal in their respective directories.
 * Files in the directory `src` include coding exercise questions 1 and 3.
-* Question 2 is located in the directory `ww-test`. I used ChromeDriver for this exercise. `AboutUsTest` and `FindWorkshopTest` can be run using:
+
+### Question 1
+```bash
+cd src
+java -jar FileExist.java
+```
+
+### Question 2
+Located in the directory `ww-test`. I used ChromeDriver for this exercise. `AboutUsTest` and `FindWorkshopTest` can be run using:
 
 ```bash
 cd ww-test
 mvn -Dtest=AboutUsTest test
-
 mvn -Dtest=FindWorkshopTest test
 ```
 
@@ -18,12 +25,14 @@ mvn -Dtest=FindWorkshopTest test
 mvn test
 ```
 
-## Folder Structure
+### Question 3
+*Required*: Installation of [Node.js](https://nodejs.org/en/)
 
-The workspace contains two folders by default, where:
+This Javascript program can be run as such:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```bash
+node NthSmallest.js
+```
 
 ---
 
