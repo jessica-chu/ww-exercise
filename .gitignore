@@ -1,5 +1,6 @@
 surefire-reports/
 generated-test-sources/
 maven-archiver/
+.vscode
 
 *.log
