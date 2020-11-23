@@ -1,3 +1,4 @@
-target
+surefire-reports/
+generated-test-sources/
 
 *.log
