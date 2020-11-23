@@ -31,9 +31,9 @@ The workspace contains two folders by default, where:
 
 There is a file containing a word and its possible meanings (like a Dictionary). The contents of the file look like this:
 
-Apple – a fruit, a tech firm
-Table – an object, contains rows and columns when used in context of computers
-Orange – a fruit
+Apple – a fruit, a tech firm  
+Table – an object, contains rows and columns when used in context of computers  
+Orange – a fruit  
 
 Given a path to the file, do the following:
 
@@ -50,8 +50,6 @@ Meaning2
 ```
 
 Use appropriate data structures wherever necessary.
-
----
 
 ### Question 2
 
@@ -76,8 +74,6 @@ Output should be:
 Person A  3
 Person B  1
 ```
-
----
 
 ### Question 3
 
